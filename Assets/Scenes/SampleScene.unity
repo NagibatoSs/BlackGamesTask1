@@ -1612,6 +1612,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 5
   _joystick: {fileID: 1064439101}
+  IsActive: 0
 --- !u!114 &1673311770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1625,7 +1626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _controller: {fileID: 1673311767}
-  _speed: 0.5
+  _speed: 5
 --- !u!1 &1760943331
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,28 +5,19 @@ using UnityEngine.EventSystems;
 using UnityEngine.Events;
 namespace BrickMove
 {
-    public class TapPlane : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
+    public class TapPlane : MonoBehaviour, IPointerUpHandler
     {
         [SerializeField] private GameObject _moveObj;
-        private CharacterController _controller;
         private BrickPointMove _pointMove;
 
-        private void Start() {
-            _controller = _moveObj.GetComponent<CharacterController>();
+        private void Start() 
+        {
             _pointMove = _moveObj.GetComponent<BrickPointMove>();
         }
 
         public void OnPointerUp(PointerEventData data) 
         {
-            Debug.Log("up");
-            var vector = data.pointerCurrentRaycast.worldPosition;
-            Debug.Log(vector);
-            _pointMove.TargetPosition = vector;
-        }
-        public void OnPointerDown(PointerEventData data) 
-        {
-            // Debug.Log("down");
-            // _pointMove.TargetPosition = data.pointerCurrentRaycast.worldPosition;
+            _pointMove.TargetPosition = data.pointerCurrentRaycast.worldPosition;;
         }
     }
 }
