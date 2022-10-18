@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.Events;
 namespace BrickMove
 {
-    public class TapPlane : MonoBehaviour, IPointerUpHandler
+    public class TapPlane : MonoBehaviour, IPointerDownHandler
     {
         [SerializeField] private GameObject _moveObj;
         private BrickPointMove _pointMove;
@@ -15,7 +15,7 @@ namespace BrickMove
             _pointMove = _moveObj.GetComponent<BrickPointMove>();
         }
 
-        public void OnPointerUp(PointerEventData data) 
+        public void OnPointerDown(PointerEventData data) 
         {
             _pointMove.TargetPosition = data.pointerCurrentRaycast.worldPosition;;
         }
