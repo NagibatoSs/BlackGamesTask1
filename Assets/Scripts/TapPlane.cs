@@ -17,7 +17,8 @@ namespace BrickMove
 
         public void OnPointerDown(PointerEventData data) 
         {
-            _pointMove.TargetPosition = data.pointerCurrentRaycast.worldPosition;;
+            _pointMove.TargetPosition = data.pointerCurrentRaycast.worldPosition;
+            _pointMove.IsPointReached =false;
         }
     }
 }

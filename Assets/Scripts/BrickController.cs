@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 namespace BrickMove
 {
     public class BrickController : MonoBehaviour
@@ -7,6 +8,7 @@ namespace BrickMove
         [SerializeField] private FixedJoystick _joystick;
         private CharacterController _controller;
         [HideInInspector] public bool IsActive=false;
+        public Vector3 vector;
 
         void Start()
         {
@@ -15,8 +17,8 @@ namespace BrickMove
 
         void Update()
         {
-            var vector = new Vector3(_joystick.Horizontal, transform.position.y,_joystick.Vertical);
-            if (vector.x !=0 || vector.z !=0)
+            vector = new Vector3(_joystick.Horizontal, transform.position.y,_joystick.Vertical);
+            if (vector.x !=0 || vector.z!=0 )
                 IsActive = true;
             else 
                 IsActive = false;
